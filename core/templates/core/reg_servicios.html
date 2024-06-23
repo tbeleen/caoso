@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+    <h1 style="text-align: center; color: #333; margin-bottom: 20px;">COMPRAS</h1>
+    <div style="margin: 0 auto; width: 90%; max-width: 1000px;">
+        <table style="width: 100%; border-collapse: collapse; margin: 0 auto;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Fecha de pago</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Order ID</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Monto</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Moneda</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Payer ID</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Payer Email</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Payer Name</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if pagos %}
+                    {% for pago in pagos %}
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.fecha_pago }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.order_id }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.monto|floatformat:2 }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.moneda }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.payer_id }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.payer_email }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.payer_name }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">
+                            <a href="{% url 'voucher' %}?id={{ pago.id }}" style="color: #3498db; text-decoration: none;">Voucher</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="8" style="text-align: center; padding: 10px;">No hay compras registradas.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

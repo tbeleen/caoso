@@ -1,0 +1,153 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-3 mb-4">
+            <div style="background-color: #fff; border: 1px solid #ddd; padding: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 15px; text-align: center; height: 500px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h5 style="font-weight: bold; color: #007bff; margin-bottom: 20px;">Basic</h5>
+                    <h1 style="color: #007bff; font-size: 2em;">$18 <span style="font-size: 0.5em; color: #6c757d;">Monthly</span></h1>
+                    <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0; color: #6c757d; text-align: left; margin: 20px 0;">
+                        <li>Acceso a contenido exclusivo para suscriptores.</li>
+                        <li>Acceso a boletines informativos.</li>
+                        <li>Menos anuncios.</li>
+                        <li>Acceso ilimitado a artículos.</li>
+                    </ul>
+                </div>
+                <div>
+                    <button style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px;">Buy Now</button>
+                    <div id="paypal-button-basic" style="margin-top: 20px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div style="background-color: #fff; border: 1px solid #ddd; padding: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 15px; text-align: center; height: 500px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h5 style="font-weight: bold; color: #28a745; margin-bottom: 20px;">Standard</h5>
+                    <h1 style="color: #28a745; font-size: 2em;">10.00 <span style="font-size: 0.5em; color: #6c757d;">Monthly</span></h1>
+                    <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0; color: #6c757d; text-align: left; margin: 20px 0;">
+                        <li>Acceso a artículos de archivo.</li>
+                        <li>Experiencia sin anuncios.</li>
+                        <li>Notificaciones personalizadas sobre temas de interés.</li>
+                        <li>Acceso a podcasts exclusivos.</li>
+                    </ul>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <div style="justify-content: center;" class="text-center" id="paypal-button"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div style="background-color: #fff; border: 1px solid #ddd; padding: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 15px; text-align: center; height: 500px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h5 style="font-weight: bold; color: #dc3545; margin-bottom: 20px;">Plus</h5>
+                    <h1 style="color: #dc3545; font-size: 2em;">$32 <span style="font-size: 0.5em; color: #6c757d;">Monthly</span></h1>
+                    <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0; color: #6c757d; text-align: left; margin: 20px 0;">
+                        <li>Acceso a eventos en vivo y webinars exclusivos.</li>
+                        <li>Acceso anticipado a reportajes y artículos de investigación.</li>
+                        <li>Descargas ilimitadas de informes y e-books.</li>
+                        <li>Perfiles de autores y acceso a entrevistas exclusivas.</li>
+                    </ul>
+                </div>
+                <div>
+                    <button style="background-color: #dc3545; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px;">Buy Now</button>
+                    <div id="paypal-button-plus" style="margin-top: 20px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div style="background-color: #fff; border: 1px solid #ddd; padding: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 15px; text-align: center; height: 500px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h5 style="font-weight: bold; color: #ffc107; margin-bottom: 20px;">Premium</h5>
+                    <h1 style="color: #ffc107; font-size: 2em;">$77 <span style="font-size: 0.5em; color: #6c757d;">Monthly</span></h1>
+                    <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0; color: #6c757d; text-align: left; margin: 20px 0;">
+                        <li>Curso gratis de periodismo.</li>
+                        <li>Reportes personalizados y consultoría.</li>
+                        <li>Publicidad y reconocimiento en la página.</li>
+                        <li>Acceso a talleres y formación en línea.</li>
+                    </ul>
+                </div>
+                <div>
+                    <button style="background-color: #ffc107; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px;">Buy Now</button>
+                    <div id="paypal-button-premium" style="margin-top: 20px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+    {% block js %}
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script>
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'AU72ZnIvAL1M4WSUtesBwV1-17MV_RjK35NBL92LoIVyMHzLKLh8_aOdhy60M9LHFyXFDTnc_4wX3hq1',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'small',
+            color: 'black',
+            shape: 'rect'
+        },
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+        // Set up a payment
+        payment: function (data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: '10.00',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+        // Execute the payment
+        onAuthorize: function (data, actions) {
+        return actions.payment.execute().then(function (details) {
+            
+            window.alert('Gracias por tu compra!');
+
+            return fetch('/reg_servicios/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    paymentID: data.paymentID,
+                    payerID: data.payerID,
+                    amount: details.transactions[0].amount.total,
+                    currency: details.transactions[0].amount.currency,
+                    payerEmail: details.payer.payer_info.email,
+                    payerName: details.payer.payer_info.first_name + ' ' + details.payer.payer_info.last_name
+                })
+            }).then(function(response) {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            }).then(function(responseData) {
+                console.log('Transacción guardada exitosamente.', responseData);
+            }).catch(function(error) {
+                console.error('Error al guardar la transacción:', error);
+            });
+        });
+    },
+    onCancel: function(data) {
+        console.log("Pago cancelado!");
+    }
+}, '#paypal-button');
+</script>
+    {% endblock %}
+
+    
