@@ -169,7 +169,7 @@ cloudinary.config (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 #CONFIGURACION DELL LOGIN Y LOGOUT
 LOGIN_REDIRECT_URL  = '/'
@@ -179,8 +179,8 @@ LOGOUT_REDIRECT_URL = '/'
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
 #recaptcha
-RECAPTCHA_PUBLIC_KEY = '6LchDfwpAAAAADAfCdUbKuKo9MkTng7AxthSqPbS'
-RECAPTCHA_PRIVATE_KEY = '6LchDfwpAAAAAPLeboHwPYWKvNqhOGmmLDuPLjXy'
+RECAPTCHA_PUBLIC_KEY = '6Lf0wf8pAAAAAEWcvlV63KThAqLbMPSzj_hPAge6'
+RECAPTCHA_PRIVATE_KEY = '6Lf0wf8pAAAAAF1lucsGw6DoraJ1dBnJUtcZfjQS'
 
 #CONFIG AXES
 AUTHENTICATION_BACKENDS = [
