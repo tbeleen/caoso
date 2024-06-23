@@ -1,16 +1,17 @@
-django 
+django==5.0.4
 django-admin-interface
 django-crispy-forms
 crispy-bootstrap4
 pillow
 zeep
 psycopg2-binary
-cloudinary
-whitenoise
 django-admin-confirm
 django-axes
 django-simple-captcha
 django-recaptcha
+cloudinary
+whitenoise
 djangorestframework
+django-cloudinary-storage
 
 #pip install -r requirements.txt

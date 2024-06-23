@@ -16,11 +16,10 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader 
 import cloudinary.api
-
+from django.core.wsgi import get_wsgi_application
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -48,10 +47,10 @@ INSTALLED_APPS = [
     'core',
     'crispy_forms',
     'crispy_bootstrap4',
+    'rest_framework',
     'axes',
     'captcha',
     'django_recaptcha',
-    'rest_framework',
     'cloudinary',
 ]
 
