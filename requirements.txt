@@ -4,7 +4,6 @@ django-crispy-forms
 crispy-bootstrap4
 pillow
 zeep
-psycopg2
 psycopg2-binary
 django-admin-confirm
 django-axes
