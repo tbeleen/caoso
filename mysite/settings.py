@@ -149,19 +149,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# python manage.py collectstatic --upload-unhashed.files
+
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dqsuxzumb',
     'API_KEY': '647732538135121',
     'API_SECRET': 'vVQMxUI15yTInKmcWl-d2-X_kUY'
 }
-CLOUDINARY_URL=cloudinary
+
 #CONFIG CLOUDINARY
 cloudinary.config (
     cloud_name = 'dqsuxzumb',
@@ -177,7 +177,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #CONFIGURACION DELL LOGIN Y LOGOUT
 LOGIN_REDIRECT_URL  = '/'
