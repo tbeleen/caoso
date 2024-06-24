@@ -16,7 +16,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader 
 import cloudinary.api
-from django.core.wsgi import get_wsgi_application
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -164,9 +164,9 @@ CLOUDINARY_STORAGE = {
 }
 
 cloudinary.config(
-    cloud_name='dqsuxzumb',
-    api_key='647732538135121',
-    api_secret='vVQMxUI15yTInKmcWl-d2-X_kUY'
+    cloud_name = 'dqsuxzumb',
+    api_key = '647732538135121',
+    api_secret = 'vVQMxUI15yTInKmcWl-d2-X_kUY'
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
