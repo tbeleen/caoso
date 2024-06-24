@@ -63,66 +63,6 @@
 <!-- Carousel End -->
 <!-- CONSUMIENDO API -->
 
-<body>
-    <div class="w3-container">
-        <h2>Valor Dolar</h2>
-        <div id="table-container"></div>
-        <div class="pagination" id="pagination"></div>
-    </div>
-
-    <script>
-        const data = [
-            {% for aux in money.serie %}
-                { fecha: '{{ aux.fecha }}', valor: '{{ aux.valor }}' },
-            {% endfor %}
-        ];
-
-        const rowsPerPage = 1;
-        let currentPage = 1;
-
-        function formatFecha(fecha) {
-            const date = new Date(fecha);
-            return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-        }
-
-        function displayTable(page) {
-            const start = (page - 1) * rowsPerPage;
-            const paginatedItems = data.slice(start, start + rowsPerPage);
-            const tableContent = `
-                <table class="w3-table w3-striped w3-bordered w3-hoverable w3-white">
-                    <thead><tr><th>Fecha</th><th>Valor</th></tr></thead>
-                    <tbody>${paginatedItems.map(item => `<tr><td>${formatFecha(item.fecha)}</td><td>${item.valor}</td></tr>`).join('')}</tbody>
-                </table>`;
-            document.getElementById('table-container').innerHTML = tableContent;
-            setupPagination(data.length, page);
-        }
-
-        function setupPagination(totalItems, currentPage) {
-            const totalPages = Math.ceil(totalItems / rowsPerPage);
-            let paginationContent = '';
-
-            if (totalPages <= 10) {
-                for (let i = 1; i <= totalPages; i++) {
-                    paginationContent += `<a href="javascript:void(0);" class="${i === currentPage ? 'active' : ''}" onclick="displayTable(${i})">${i}</a>`;
-                }
-            } else {
-                if (currentPage > 1) paginationContent += `<a href="javascript:void(0);" onclick="displayTable(${currentPage - 1})">&laquo;</a>`;
-                for (let i = 1; i <= totalPages; i++) {
-                    if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 2) {
-                        paginationContent += `<a href="javascript:void(0);" class="${i === currentPage ? 'active' : ''}" onclick="displayTable(${i})">${i}</a>`;
-                    } else if (i === currentPage - 3 || i === currentPage + 3) {
-                        paginationContent += `<span>...</span>`;
-                    }
-                }
-                if (currentPage < totalPages) paginationContent += `<a href="javascript:void(0);" onclick="displayTable(${currentPage + 1})">&raquo;</a>`;
-            }
-
-            document.getElementById('pagination').innerHTML = paginationContent;
-        }
-
-        displayTable(currentPage);
-    </script>
-
 <!-- fin api -->
 <!-- Categories Start -->
 <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Periodistas</span></h2>

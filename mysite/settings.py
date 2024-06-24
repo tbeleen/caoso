@@ -162,14 +162,14 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'vVQMxUI15yTInKmcWl-d2-X_kUY'
 }
 
-#CONFIG CLOUDINARY
-cloudinary.config (
-    cloud_name = 'dqsuxzumb',
-    api_key = '647732538135121',
-    api_secret = 'vVQMxUI15yTInKmcWl-d2-X_kUY'
+cloudinary.config(
+    cloud_name='dqsuxzumb',
+    api_key='647732538135121',
+    api_secret='vVQMxUI15yTInKmcWl-d2-X_kUY'
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -187,8 +187,8 @@ LOGOUT_REDIRECT_URL = '/'
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
 #recaptcha
-RECAPTCHA_PUBLIC_KEY = '6LcY0f8pAAAAAKan4lKMO5gdw1Rd_gRkKH_UuC2l'
-RECAPTCHA_PRIVATE_KEY = '6LcY0f8pAAAAAMnGQrlwgglF-F-GeIq1_k9gWspo'
+RECAPTCHA_PUBLIC_KEY = '6Le90_8pAAAAACREMtS4h-P5vATYXVIFiK3_-gyt'
+RECAPTCHA_PRIVATE_KEY = '6Le90_8pAAAAABbKzP9ameZ31M08IH4qpqSoC_af'
 
 #CONFIG AXES
 AUTHENTICATION_BACKENDS = [
