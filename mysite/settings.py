@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'captcha',
     'django_recaptcha',
     'cloudinary',
+    'cloudinary_storage',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
