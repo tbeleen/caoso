@@ -62,7 +62,23 @@
 </div>
 <!-- Carousel End -->
 <!-- CONSUMIENDO API -->
+<div class="container py-2">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.05s" style="max-width: 600px;">
+        <h1>Futbol</h1>
+    </div>
 
+    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.05s">
+        {% for aux in money.serie %}
+        <div class="testimonial-item text-center">
+            <div class="testimonial-item rounded p-2 text-white">
+                <p> {{aux.fecha}} </p>
+                <p> {{aux.valor}} </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
 <!-- fin api -->
 <!-- Categories Start -->
 <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Periodistas</span></h2>

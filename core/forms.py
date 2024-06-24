@@ -46,7 +46,7 @@ class TipoNoticiaForm(ModelForm):
         fields = '__all__'
         
 class CustomUserCreationForm(UserCreationForm):
-    
+    captcha = ReCaptchaField()
     class Meta:
         model = User
         fields = {'username','first_name','last_name','password1','password2'}

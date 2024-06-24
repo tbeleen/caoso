@@ -2,6 +2,7 @@ django==5.0.4
 django-admin-interface
 django-crispy-forms
 crispy-bootstrap4
+crispy-bootstrap5
 pillow
 zeep
 psycopg2-binary
