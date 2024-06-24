@@ -87,13 +87,11 @@ def index(request):
     noticia = Noticia.objects.order_by('-fecha')[:2]
     noti = Noticia.objects.all()
     periodista = Periodista.objects.all()
-    response = requests.get('https://mindicador.cl/api/dolar')
-    dolar = response.json()
     aux = {
         'lista': noticia,
         'noti': noti,
-        'listafiltrada': periodista,
-        'money' : dolar
+        'listafiltrada': periodista
+        
 
     }
     return render(request, 'core/index.html',aux)
