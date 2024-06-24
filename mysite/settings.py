@@ -107,10 +107,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST' : 'aws-0-sa-east-1.pooler.supabase.com',
         'NAME': 'postgres',
-        'USER':'postgres.fgtbkpbwumziolqttwca',
-        'PASSWORD':'Proyecto2024',
         'PORT':'5432',
-        
+        'USER':'postgres.fgtbkpbwumziolqttwca',
+        'PASSWORD':'Proyecto2024'
         
     }
 }
@@ -177,15 +176,16 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 #CONFIGURACION DELL LOGIN Y LOGOUT
 LOGIN_REDIRECT_URL  = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+
 #configuracion de mensajes
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #recaptcha
 RECAPTCHA_PUBLIC_KEY = '6Le90_8pAAAAACREMtS4h-P5vATYXVIFiK3_-gyt'
@@ -201,3 +201,5 @@ AXES_FAILURE_LIMIT = 3 # numeros de intentos fallidos por el usuario.
 AXES_COOLOFF_TIME = timedelta(minutes=5) #cantidad de tiempo que tiene que esperar antes de otro login.
 AXES_LOCKOUT_URL = '/account_locked/'
 AXES_RESET_ON_SUCCESS = True #resetea el contador de los fallos cuando hay login exitoso.
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -331,6 +331,9 @@ def solidelete(request, id):
 def account_locked(request):
     return render(request,'core/account_locked.html')
 
+def password_change_form (request):
+    return render(request, 'registration/password_change_form.html')
+
 def servicios(request):
     return render(request,'core/servicios.html')
 

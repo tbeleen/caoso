@@ -31,6 +31,7 @@ urlpatterns = [
     path('solicitudes/delete/<id>',solidelete,name="solidelete"),
     # ACOUNT LOCKED
     path('account_locked/', account_locked, name="account_locked"),
+    path('password_change_form/',password_change_form,name="password_change_form"),
     #API
     path('api/', include(router.urls)),
     path('periodistasapi/', periodistasapi, name="periodistasapi"),
