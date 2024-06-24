@@ -156,6 +156,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # python manage.py collectstatic --upload-unhashed.files
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dqsuxzumb',
+    'API_KEY': '647732538135121',
+    'API_SECRET': 'vVQMxUI15yTInKmcWl-d2-X_kUY'
+}
+
 #CONFIG CLOUDINARY
 cloudinary.config (
     cloud_name = 'dqsuxzumb',
