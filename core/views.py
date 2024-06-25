@@ -94,7 +94,7 @@ def index(request):
         'lista': noticia,
         'noti': noti,
         'listafiltrada': periodista,
-        'ufapi' : dolar
+        'dolar' : dolar
         
 
     }
