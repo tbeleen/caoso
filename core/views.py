@@ -223,6 +223,13 @@ def periodistadelete(request, id):
 
     return redirect(to="periodista")
 
+@permission_required('core.delete_periodista')
+def periodistasapidelete(request, id):
+    periodista = Periodista.objects.get(id=id)
+    periodistasapi.delete()
+
+    return redirect(to="periodistasapi")
+
 # CRUD NOTICIA:
 
 @permission_required('core.view_noticia')

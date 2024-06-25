@@ -34,6 +34,7 @@ urlpatterns = [
     #API
     path('api/', include(router.urls)),
     path('periodistasapi/', periodistasapi, name="periodistasapi"),
+    path('periodistasapi/delete/<id>/', periodistasapidelete, name="periodistasapidelete"),
     path('ufapi/', ufapi, name="ufapi"),
     #pagos
     path('servicios/', servicios, name="servicios"),

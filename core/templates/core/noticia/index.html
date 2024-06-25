@@ -21,7 +21,7 @@
         {% endif %}
             <div class="text-center mt-4">
                 <a class="btn btn-outline-success mx-2" href="{% url 'solicitudupdate' noticia.id %}">Ver</a>
-                
+                <a class="btn btn-outline-danger" onclick="confirmarDelete({{aux.id}})">Eliminar</a>
             </div>
         </div>
     </div>
