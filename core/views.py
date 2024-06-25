@@ -20,7 +20,7 @@ from django.views.decorators.csrf import csrf_protect
 
 #metodos para listar desde el api
 def periodistasapi(request):
-    response = requests.get('https://proyecto-sigma-sandy.vercel.app/api/periodistas/')
+    response = requests.get('https://proyecto-git-main-tamaras-projects-f55204c0.vercel.app/')
     periodistas = response.json()
 
     aux = {
