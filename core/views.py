@@ -20,7 +20,7 @@ from django.views.decorators.csrf import csrf_protect
 
 #metodos para listar desde el api
 def periodistasapi(request):
-    response = requests.get('http://127.0.0.1:8000/api/periodistas/')
+    response = requests.get('https://proyecto-sigma-sandy.vercel.app/api/periodistas/')
     periodistas = response.json()
 
     aux = {
@@ -87,10 +87,14 @@ def index(request):
     noticia = Noticia.objects.order_by('-fecha')[:2]
     noti = Noticia.objects.all()
     periodista = Periodista.objects.all()
+    response = requests.get('https://mindicador.cl/api/dolar')
+
+    dolar = response.json()
     aux = {
         'lista': noticia,
         'noti': noti,
-        'listafiltrada': periodista
+        'listafiltrada': periodista,
+        'ufapi' : dolar
         
 
     }

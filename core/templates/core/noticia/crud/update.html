@@ -12,9 +12,10 @@
         <br>
         <br>
         <br>
-        
+        {% if user.is_staff %}
         <input class="btn btn-success"  type="submit" value="Modificar">
         <input class="btn btn-danger"  type="reset" value="Limpiar">
+        {% endif %}
     </form>
     <h5>{{ msj }}</h5>
     
