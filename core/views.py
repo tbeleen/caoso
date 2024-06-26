@@ -118,15 +118,11 @@ def register(request):
         formulario = CustomUserCreationForm(request.POST)
         if formulario.is_valid():
             user = formulario.save()
-            #AL USUARIO LE ASIGNAMOS UN GRUPO
             group = Group.objects.get(name='usuario')
             user.groups.add(group)
-            #mensaje
             messages.success(request,'Usuario registrado correctamente!')
-            #opcional (autentifa y logea al usuario)
             user = authenticate(username=formulario.cleaned_data['username'] ,password=formulario.cleaned_data['password1'])
             login(request, user)
-            #redirecciona
             return redirect(to="index")         
         else:
             aux['form'] = formulario
