@@ -18,7 +18,7 @@
         </style>
         
 
-    <h1 style="text-align: center; color: #333; margin-bottom: 20px;">Voucher</h1>
+    <h1 style="text-align: center; color: #333; margin-bottom: 20px;">Voucher de pago</h1>
     <div class="print-container" style="margin: 0 auto; width: 80%; max-width: 800px; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         {% for pago in voucher %}
             <div style="margin-bottom: 20px; padding: 15px; border-bottom: 1px solid #ddd;">
@@ -27,10 +27,11 @@
                 <p style="font-size: 16px; margin: 5px 0;"><strong>Monto:</strong> {{ pago.monto }} {{ pago.moneda }}</p>
                 <p style="font-size: 16px; margin: 5px 0;"><strong>Usuario:</strong> {{ pago.usuario }}</p>
                 <p style="font-size: 16px; margin: 5px 0;"><strong>Correo de PayPal:</strong> {{ pago.correo_paypal }}</p>
+                <p>Imprimir total de pago de la suscripción</p>
             </div>
         {% endfor %}
     </div>
     <div style="text-align: center;">
-        <a href="{% url 'reg_servicios_view' %}" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px;">Volver</a>
+        <a href="{% url 'reg_servicios' %}" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px;">Volver</a>
         <button onclick="window.print()" style="display: inline-block; padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; margin-left: 10px;">Imprimir</button>
     </div>

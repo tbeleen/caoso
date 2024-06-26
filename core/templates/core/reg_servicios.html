@@ -29,7 +29,7 @@
                         <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.payer_email }}</td>
                         <td style="border: 1px solid #ddd; padding: 8px;">{{ pago.payer_name }}</td>
                         <td style="border: 1px solid #ddd; padding: 8px;">
-                            <a href="{% url 'voucher' %}?id={{ pago.id }}" style="color: #3498db; text-decoration: none;">Voucher</a>
+                        
                         </td>
                     </tr>
                     {% endfor %}
@@ -38,6 +38,7 @@
                         <td colspan="8" style="text-align: center; padding: 10px;">No hay compras registradas.</td>
                     </tr>
                 {% endif %}
+                <a href="{% url 'voucher' %}?id={{ pago.id }}" style="color: #3498db; text-decoration: none;">Voucher</a>
             </tbody>
         </table>
     </div>
