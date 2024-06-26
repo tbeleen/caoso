@@ -64,10 +64,11 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'axes.middleware.AxesMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'axes.middleware.AxesMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -188,8 +189,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #recaptcha
-RECAPTCHA_PUBLIC_KEY = '6Lcj5_8pAAAAAJnA9jGe6vPdDxm58lZPnkWcToR0'
-RECAPTCHA_PRIVATE_KEY = '6Lcj5_8pAAAAAOqH_0q7henjsI2LtIaL9VVUYXuD'
+RECAPTCHA_PUBLIC_KEY = '6LfGjgEqAAAAAAp9DLxe4ZfUrl1ELybVqZdzt0pM'
+RECAPTCHA_PRIVATE_KEY = '6LfGjgEqAAAAAL-MHMkTM48iv_yhPx6XlmHLeN9U'
 
 #CONFIG AXES
 AUTHENTICATION_BACKENDS = [
