@@ -15,5 +15,6 @@ whitenoise
 djangorestframework
 django-cloudinary-storage
 reportlab
+django-captcha-admin  
 
 #pip install -r requirements.txt

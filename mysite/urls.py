@@ -43,6 +43,7 @@ urlpatterns = [
         name='password_reset_complete'),
     
     path('captcha/', include('captcha.urls')),
+    
 ]
 
 if settings.DEBUG:

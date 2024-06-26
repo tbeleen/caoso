@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'rest_framework',
     'axes',
+    'captcha_admin',
     'captcha',
     'django_recaptcha',
     'cloudinary',
