@@ -15,4 +15,5 @@ whitenoise
 djangorestframework
 django-cloudinary-storage
 
+
 #pip install -r requirements.txt

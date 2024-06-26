@@ -18,6 +18,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect
 
 
+
+
 #metodos para listar desde el api
 def periodistasapi(request):
     response = requests.get('https://proyecto-git-main-tamaras-projects-f55204c0.vercel.app/')
