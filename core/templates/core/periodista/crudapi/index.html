@@ -21,7 +21,7 @@
                     <div class="row align-items-center">
                         <div class="col-auto">
                             {% if aux.imagen %}
-                            <img src="{{ aux.imagen.url }}" class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #ddd;" alt="Avatar">
+                            <img src="{{ https://res.cloudinary.com/dqsuxzumb/{{ aux.imagen }} }}" class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #ddd;" alt="Avatar">
                             {% else %}
                             <img src="/static/core/img/usuario.png" class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #ddd;" alt="Avatar">
                             {% endif %}
@@ -29,7 +29,7 @@
                         <div class="col">
                             <h5 class="card-title mb-1" style="font-weight: bold; color: #343a40;">{{ aux.nombre }} {{ aux.apellido }}</h5>
                             <p class="card-text mb-1" style="color: #6c757d;">{{ aux.rut }}</p>
-                            <p class="card-text mb-0" style="color: #6c757d;">{{ aux.TipoPeriodista }}</p>
+                            <p class="card-text mb-0" style="color: #6c757d;">{{ aux.TipoPeriodista.descripcion }}</p>
                         </div>
                         <div class="col-auto">
                             <div class="dropdown">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-left" style="border-top: 1px solid #ddd; background-color: #f8f9fa;">
-                    <small class="text-muted">{{ aux.tipo }}</small>
+                    <small class="text-muted">{{ <aux class="tipo detalle"></aux> }}</small>
                 </div>
             </div>
         </div>
