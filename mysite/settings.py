@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'admin_interface',
     'colorfield',
     'admin_confirm',
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +55,11 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
 ]
+
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 X_FRAME_OPTIONS = "SAMEORIGIN"
