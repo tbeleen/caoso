@@ -24,7 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('core.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('captcha/', include('captcha.urls')),
 
     path('password_reset/', 
         auth_views.PasswordResetView.as_view(template_name='registration/password_reset.html'),
