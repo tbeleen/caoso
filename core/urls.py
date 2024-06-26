@@ -40,4 +40,5 @@ urlpatterns = [
     path('servicios/', servicios, name="servicios"),
     path('reg_servicios/', reg_servicios, name="reg_servicios"),
     path('voucher/', voucher, name="voucher"),
+    path('voucher/pdf/', generate_pdf, name='generate_pdf'), 
 ]

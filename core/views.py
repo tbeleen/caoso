@@ -17,6 +17,8 @@ import requests
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect
 from django.core.paginator import Paginator
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import LETTER
 
 
 
@@ -382,3 +384,36 @@ def reg_servicio(request, pago_id):
         })
     else:
         return JsonResponse({'error': 'No tiene permiso para acceder a este pago.'}, status=403)
+    
+def generate_pdf(request):
+    # Crear una respuesta HTTP con tipo de contenido 'application/pdf'
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="voucher.pdf"'
+
+    # Crear el objeto PDF, utilizando el objeto response como "archivo"
+    p = canvas.Canvas(response, pagesize=LETTER)
+
+    # Consultar los datos de la base de datos
+    pagos = Pagos.objects.all()
+
+    # Agregar contenido al PDF
+    p.drawString(100, 750, "Voucher")
+
+    y = 700
+    for pago in pagos:
+        p.drawString(100, y, f"Order ID: {pago.order_id}")
+        p.drawString(100, y-20, f"Fecha de pago: {pago.fecha_pago}")
+        p.drawString(100, y-40, f"Monto: {pago.monto} {pago.moneda}")
+        p.drawString(100, y-60, f"Usuario: {pago.usuario}")
+        p.drawString(100, y-80, f"Correo de PayPal: {pago.correo_paypal}")
+        y -= 100
+
+        if y < 100:
+            p.showPage()
+            y = 750
+
+    # Cerrar el objeto PDF limpiamente
+    p.showPage()
+    p.save()
+
+    return response
