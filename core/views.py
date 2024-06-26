@@ -16,17 +16,21 @@ from rest_framework.renderers import JSONRenderer
 import requests
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect
-
+from django.core.paginator import Paginator
 
 
 
 #metodos para listar desde el api
 def periodistasapi(request):
-    response = requests.get('https://proyecto-git-main-tamaras-projects-f55204c0.vercel.app/')
+    response = requests.get('https://caoso.vercel.app/api/periodistas/')
     periodistas = response.json()
 
+    paginator = Paginator(periodistas,5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     aux = {
-        'listas' : periodistas
+        'page_obj' : page_obj
     }
 
     return render(request, 'core/periodista/crudapi/index.html', aux)
