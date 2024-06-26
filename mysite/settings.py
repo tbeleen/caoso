@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'axes.middleware.AxesMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'multi_captcha_admin.middleware.MultiCaptchaAdminMiddleware',
+    #'multi_captcha_admin.middleware.MultiCaptchaAdminMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
