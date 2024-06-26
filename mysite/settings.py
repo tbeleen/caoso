@@ -203,3 +203,13 @@ AXES_LOCKOUT_URL = '/account_locked/'
 AXES_RESET_ON_SUCCESS = True #resetea el contador de los fallos cuando hay login exitoso.
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 't.beleenmiranda@gmail.com'
+EMAIL_HOST_PASSWORD = 'iznk arim wdnw bqsf'
+DEFAULT_FROM_EMAIL = 't.beleenmiranda@gmail.com'
+
+EMAIL_DEBUG = True
