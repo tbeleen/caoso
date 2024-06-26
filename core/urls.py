@@ -40,6 +40,4 @@ urlpatterns = [
     path('servicios/', servicios, name="servicios"),
     path('reg_servicios/', reg_servicios, name="reg_servicios"),
     path('voucher/', voucher, name="voucher"),
-    path('pagos/', Pagos, name='pagos'),
-
 ]

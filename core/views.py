@@ -349,18 +349,11 @@ def servicios(request):
 def reg_servicios(request):
     return render(request,'core/reg_servicios.html')
 
-def Pagos(request):
-    pago = Pagos.objects.all()  # Obtiene todos los registros de pagos
-    aux = {
-        'pagos': pago,
-    }
-    return render(request, 'core/reg_servicios.html', aux)
-
 def voucher(request):
-    voucher = Pagos.objects.get()
+    pagos = Pagos.objects.all()
 
     aux = {
-        'voucher': voucher,
+        'voucher': pagos,
 
     }
     return render(request, 'core/voucher.html',aux)
